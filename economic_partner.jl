@@ -17,18 +17,23 @@ get_all_score(A::Vector{Vector}, a=2, b=1, c=1) =
     compute_score.(A, a, b, c)
 
 function compute_score(data::Vector{<:Number}, a=2, b=1, c=1)
-    oi, ci, ei, ti = data  # Unpack values directly
-    si = ci^a / (ei^b * ti^c)  # Fixed 'tu' -> 'ti'
+    oi, ci, ei, ti = data  # Unpack values 
+    si = ci^a / (ei^b * ti^c) 
     return (oi, si)
 end
 
 ################ Helpers ###############
 
+"""
+    _search_highest(A::Vector{Tuple})
+
+This function just implement a regular search algorithm 
+"""
 function _search_highest(A::Vector{Tuple})
     hi = -Inf  
     idx = 1
     for i in eachindex(A)
-        elt = A[i]  # Corrected indexing
+        elt = A[i] 
         if elt[2] > hi
             idx = i
             hi = elt[2]
