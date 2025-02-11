@@ -1,17 +1,17 @@
-############# Economic partner selection model ##################
+############# Economic factor selection model ##################
 #=
     In this model, we assume that data are stored in a CSV file, 
     but we will provide a case where it's in an array also.
 =#
 
-function get_best_partner(A::Vector{Vector}, a=2, b=1, c=1)
+function get_best_factor(A::Vector{Vector}, a=2, b=1, c=1)
     B = compute_score.(A, a, b, c)
-    best_partner_index = _search_highest(B)
-    return A[best_partner_index]
+    best_factor_index = _search_highest(B)
+    return A[best_factor_index]
 end
 
-get_best_partner(path::String, a=2, b=1, c=1) = 
-    get_best_partner(_get_csv_data(path, (String, Real, Real, Real)), a, b, c)
+get_factor_partner(path::String, a=2, b=1, c=1) = 
+    get_factor_partner(_get_csv_data(path, (String, Real, Real, Real)), a, b, c)
 
 get_all_score(A::Vector{Vector}, a=2, b=1, c=1) = 
     compute_score.(A, a, b, c)
