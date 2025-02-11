@@ -10,8 +10,8 @@ function get_best_factor(A::Vector{Vector}, a=2, b=1, c=1)
     return A[best_factor_index]
 end
 
-get_factor_partner(path::String, a=2, b=1, c=1) = 
-    get_factor_partner(_get_csv_data(path, (String, Real, Real, Real)), a, b, c)
+get_best_factor(path::String, a=2, b=1, c=1) = 
+    get_best_factor(_get_csv_data(path, (String, Real, Real, Real)), a, b, c)
 
 get_all_score(A::Vector{Vector}, a=2, b=1, c=1) = 
     compute_score.(A, a, b, c)
