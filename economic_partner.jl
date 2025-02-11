@@ -19,7 +19,7 @@ get_all_score(A::Vector{Vector}, a=2, b=1, c=1) =
 function compute_score(data::Vector{<:Number}, a=2, b=1, c=1)
     oi, ci, ei, ti = data  # Unpack values 
     si = ci^a / (ei^b * ti^c) 
-    return (oi, si)
+    return (oi, abs(si))
 end
 
 ################ Helpers ###############
