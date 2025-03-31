@@ -1,4 +1,4 @@
-# Assignment: Find the best economic partner 
+# Assignment: Find the best economic factor
 
 A country wants to increase its economic growth. To achieve this, it needs to choose 4 factors 
 from 11 that will generate the greatest possible growth. Below, you have a table containing 
